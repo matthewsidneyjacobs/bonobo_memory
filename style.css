@@ -1,0 +1,81 @@
+* {
+  box-sizing: content-box;
+}
+body {
+  background-color: grey;
+  margin: 0;
+  padding:0;
+  border: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.main {
+  height:100vh;
+  width:90vw;
+  background-color: yellow;
+  display: flex;
+  flex-direction: column;
+}
+.top_text{
+  width:100%;
+  height:10%;
+  background-color: blue;
+  margin-bottom: 25px;
+}
+
+.card_section {
+  width:100%;
+  height: 85%;
+  background-color: white;
+}
+
+.card_outline {
+  width: 100%;
+  height:100%;
+  background-color: orange;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.card {
+  border: .5px solid black;
+  height: 33%;
+  width:33%;
+}
+
+#card1 {
+  background-image: url(photos/loretta1test2.png);
+}
+#card2 {
+  /*background-image: url(photos/lisa1.png);*/
+}
+#card3 {
+  /*background-image: url(photos/lisa2.png);*/
+}
+#card4 {
+  /*background-image: url(photos/kali1.png);*/
+}
+#card5 {
+  /*background-image: url(photos/kali2.png);*/
+}
+#card6 {
+  /*background-image: url(photos/erin1.png);*/
+}
+#card7 {
+  /*background-image: url(photos/erin2.png);*/
+}
+#card8 {
+  /*background-image: url(photos/belle1.png);*/
+}
+#card9 {
+  /*background-image: url(photos/belle2.png);*/
+}
+
+
+.bottom_text {
+  margin-top: 25px;
+  width:100%;
+  height:10%;
+  background-color: red;
+}
