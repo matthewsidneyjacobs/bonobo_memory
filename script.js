@@ -1,53 +1,78 @@
-var loretta1 = {
-  id: "loretta",
-  src: "photos/loretta1test2.png"
-}
+// var loretta1 = {
+//   id: "loretta",
+//   src: "photos/loretta1test2.png"
+// }
+//
+// var loretta2 = {
+//   id: "loretta",
+//   src: "photos/loretta2.png"
+// }
+//
+// var array_ids = [1,2,3,4,5,6,7,8,9];
+// function mixedUpArr(array) {
+//   return array.sort(function(a,b) {return .5-Math.random()});
+// }
+// console.log(mixedUpArr(array_ids));
+//
+// var randos = function randomNum() {
+//   return Math.floor(Math.random() * (3-1) + 1);
+// }
+// console.log(randos());
+//
+//
+//
+// $(document).ready(function() {
+//
+//   $('.card').addClass('background-question');
+//
+//   // $('.card').click(function() {
+//   //   $(this).removeClass('background-question');
+//   //   $(this).addClass('background-answer');
+//   // })
+//
+//   // $('#card1').addClass('random-background').css("background-image", "loretta2.src");
+//
+//   for (var i = 1; i < 10; i++) {
+//     $('#card[i]').css("answer_id",randos[i-1]);
+//   }
+//   console.log($('#card1').prop('.answer_id'))
+//
+//   $('.reset-button').click(function() {
+//     $('.card').removeClass('background-answer')
+//     $('.card').addClass('background-question')
+//   })
+// });
 
-var loretta2 = {
-  id: "loretta",
-  src: "photos/loretta2.png"
-}
 
-var array_ids = [1,2,3,4,5,6,7,8,9];
-function mixedUpArr(array) {
-  return array.sort(function(a,b) {return .5-Math.random()});
-}
-console.log(mixedUpArr(array_ids));
 
-function randomNum() {
-  return Math.floor(Math.random() * (3-1) + 1);
-}
-console.log(randomNum());
+var photo_arr = [
+  {id:'loretta', src: "url(/photos/loretta1test2.png)"}, {id:'loretta', src: "url(/photos/loretta2.png)"},
+  {id:'belle', src: "url(/photos/belle1.png)"},
+  {id:'belle', src: "url(/photos/belle2.png)"},
+  {id:'kali', src: "url(/photos/kali1.png)"},
+  {id:'kali', src: "url(/photos/kali2.png)"},
+  {id:'lisa', src: "url(/photos/lisa1.png)"},
+  {id:'lisa', src: "url(/photos/lisatest2.png)"},
+  {id:'erin', src: "url(/photos/erin1.png)"}
+]
 
+var mixedUpPhotos = function(array) {
+  return array.sort(function (a,b) {return 0.5 - Math.random()});
+}
+console.log(mixedUpPhotos(photo_arr));
+console.log(mixedUpPhotos(photo_arr)[2].src)
 
 $(document).ready(function() {
 
-  $('.card').addClass('background-question');
-
-  // $('.card').click(function() {
-  //   $(this).removeClass('background-question');
-  //   $(this).addClass('background-answer');
-  // })
-
-  // $('#card1').addClass('random-background').css("background-image", "loretta2.src");
-
-
-
-
-  $('.reset-button').click(function() {
-    $('.card').removeClass('background-answer')
-    $('.card').addClass('background-question')
-  })
+    $('.card').addClass('card-q');
+    //var $bonobo_pic = mixedUpPhotos(photo_arr)[].src;
+    // console.log($bonobo_pic);
+    // $('.card').click(function() {
+    //   $(this).removeClass('background-question')
+    //   $(this).addClass('background_bonobo')
+    // })
+    $('.card').click(function() {
+      $(this).removeClass('card-q')
+      $(this).addClass('card-a').css("background-image", "url(/photos/belle1.png)")
+    });
 });
-
-
-//arrays to represent the photos. randomize the order of the array to randomize the order of photos.
-//when you click on the photo it is flipped over to reveal photo
-//click on two photos, if they match (maybe if they match photo id) then they cannot be unflipped.
-//need a counter to show how many guesses you have made
-//want to be able to  have a drop down menu to pick a bonobo to find
-
-
-//is it better to have 3 games? by that i mean have three sets of images as opposed to randomly assigning images to div spots each game?
-
-//maybe an array of objects. each object has an id and a src code?
