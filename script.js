@@ -1,8 +1,43 @@
+var loretta1 = {
+  id: "loretta",
+  src: "photos/loretta1test2.png"
+}
+
+var loretta2 = {
+  id: "loretta",
+  src: "photos/loretta2.png"
+}
+
+var array_ids = [1,2,3,4,5,6,7,8,9];
+function mixedUpArr(array) {
+  return array.sort(function(a,b) {return .5-Math.random()});
+}
+console.log(mixedUpArr(array_ids));
+
+function randomNum() {
+  return Math.floor(Math.random() * (3-1) + 1);
+}
+console.log(randomNum());
+
+
 $(document).ready(function() {
 
-    $('.card').click(function() {
-      $(this).addClass('.background-question');
-    })
+  $('.card').addClass('background-question');
+
+  // $('.card').click(function() {
+  //   $(this).removeClass('background-question');
+  //   $(this).addClass('background-answer');
+  // })
+
+  // $('#card1').addClass('random-background').css("background-image", "loretta2.src");
+
+
+
+
+  $('.reset-button').click(function() {
+    $('.card').removeClass('background-answer')
+    $('.card').addClass('background-question')
+  })
 });
 
 
