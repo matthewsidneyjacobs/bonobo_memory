@@ -1,7 +1,8 @@
 $(document).ready(function() {
-  $('#card1').on('click', function(){
-    $(this).css("background-image",''));
-  });
+
+    $('.card').click(function() {
+      $(this).addClass('.background-question');
+    })
 });
 
 

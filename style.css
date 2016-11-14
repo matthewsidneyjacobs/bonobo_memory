@@ -39,13 +39,23 @@ body {
   justify-content: space-between;
 }
 .card {
-  border: .5px solid black;
-  height: 33%;
-  width:33%;
+  border: .05px solid black;
+  height: 32%;
+  width:32%;
+  /*background-image: url(photos/paisley.png);
+  background-size: contain;*/
+}
+.background-question {
+  height:32%;
+  width:32%;
+  background-image: url(photos/paisley.png);
+  background-size: contain;
 }
 
 #card1 {
   background-image: url(photos/loretta1test2.png);
+  background-size: cover;
+  background-position: center;
 }
 #card2 {
   /*background-image: url(photos/lisa1.png);*/
