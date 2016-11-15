@@ -56,23 +56,82 @@ var photo_arr = [
   {id:'erin', src: "url(/photos/erin1.png)"}
 ]
 
-var mixedUpPhotos = function(array) {
-  return array.sort(function (a,b) {return 0.5 - Math.random()});
+function shuffle(array) {
+  var i = 0, j = 0, temp = null;
+  for (i = array.length -1; i > 0; i -=1) {
+    j = Math.floor(Math.random() * (i + 1))
+    temp = array[i]
+    array[i] = array[j]
+    array[j] = temp
+  }
+  return array
 }
-console.log(mixedUpPhotos(photo_arr));
-console.log(mixedUpPhotos(photo_arr)[2].src)
+
+console.log(shuffle(photo_arr))
 
 $(document).ready(function() {
 
+
     $('.card').addClass('card-q');
-    //var $bonobo_pic = mixedUpPhotos(photo_arr)[].src;
+    //
+    for (var i = 0; i < 9; i++) {
+      $('.card').each(function(index) {
+        $(this).attr('data-card-value',shuffle(photo_arr)[index].src)
+      })
+      $('.card').click(function() {
+        $(this).removeClass('card-q')
+        $(this).addClass('card-a').css("background-image", $(this).data('cardValue'))
+      })
+    }
+
+    // $('.card').on('click', function() {
+    //   $(this).css('background-image', '')
+    //   $(this).html('<p>'+$(this).data('cardValue')+'</p>');
+    // })
+
+
+//     for (var i = 0; i <9; i++) {
+//
+//     $('.card').each(function() {
+//
+//     $(this).addClass('card-a').css("background-image", rando_bonobo[i]);
+//   })
+// }
+    // $('.card').addClass('card-a');
+    //
+    // $('#card1').click(function() {
+    //   $(this).removeClass('card-q');
+    //   $(this).addClass('card-a').css("background-image", rando_bonobo[0])
+    // })
+    // for (var i =0; i <9; i++) {
+    //   var $bonobo_pic = [];
+    //   $bonobo_pic.push(mixedUpPhotos(photo_arr)[i].src);
+    //   $('#card1').addClass('card-a').css("background-image", $bonobo_pic[i])
+    // }
+
+    // $('#card1').addClass('card-a').css("background-image", mixedUpPhotos(photo_arr)[0].src)
+
+    // for (var i = 0; i < 9; i++) {
+    //   var $bonobo_pic = mixedUpPhotos(photo_arr)[i].src;
+    //   $('.card').removeClass('card-q')
+    //   $('.card').addClass('card-a').css("background-image  ", $bonobo_pic)
+    // }
+
+
+    // $('.card').each(function() {
+    //   $(this).addClass('card-a').css("background-image", $bonobo_pic)
+    // })
+  })
+
     // console.log($bonobo_pic);
     // $('.card').click(function() {
     //   $(this).removeClass('background-question')
     //   $(this).addClass('background_bonobo')
     // })
-    $('.card').click(function() {
-      $(this).removeClass('card-q')
-      $(this).addClass('card-a').css("background-image", "url(/photos/belle1.png)")
-    });
-});
+
+
+    // $('.card').click(function() {
+    //   $(this).removeClass('card-q')
+    //   $(this).addClass('card-a').css("background-image", $bonobo_pic)
+    // });
+//});

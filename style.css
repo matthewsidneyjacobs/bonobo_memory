@@ -49,6 +49,7 @@ body {
   background-size: contain;*/
 }
 
+
 .card-a {
   border: .05px solid black;
   height: 32%;
@@ -86,7 +87,11 @@ body {
 
 #card1 {
   /*background-image: url(photos/loretta1test2.png);*/
+  border: .05px solid black;
+  height: 32%;
+  width:32%;
   background-size: cover;
+  /*background-attachment: fixed;*/
   background-position: center;
 }
 #card2 {
