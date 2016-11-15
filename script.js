@@ -69,14 +69,17 @@ function shuffle(array) {
 
 console.log(shuffle(photo_arr))
 
-$(document).ready(function() {
+var shuffled = shuffle(photo_arr);
+console.log(shuffled);
 
+
+$(document).ready(function() {
 
     $('.card').addClass('card-q');
     //
     for (var i = 0; i < 9; i++) {
       $('.card').each(function(index) {
-        $(this).attr('data-card-value',shuffle(photo_arr)[index].src)
+        $(this).attr('data-card-value',shuffled[index].src)
       })
       $('.card').click(function() {
         $(this).removeClass('card-q')
